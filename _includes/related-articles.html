@@ -1,0 +1,15 @@
+{% if site.posts.size > 1 %}
+<div class="related-articles">
+  <h3>Related Articles</h3>
+  <div class="related-grid">
+    {% for post in site.posts limit:3 %}
+      {% if post.url != page.url %}
+      <a href="{{ site.baseurl }}{{ post.url }}" class="related-card">
+        <span class="related-tag">{{ post.categories | first | default: "Article" }}</span>
+        <h4>{{ post.title }}</h4>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

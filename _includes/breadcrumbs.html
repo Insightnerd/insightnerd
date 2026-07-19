@@ -1,0 +1,17 @@
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="{{ site.baseurl }}/">Home</a>
+  {% if page.categories %}
+    {% assign category = page.categories | first %}
+    {% assign category_name = category %}
+    {% if category_name == 'ai' %}{% assign category_label = 'AI' %}
+    {% elsif category_name == 'tools' %}{% assign category_label = 'Tools' %}
+    {% elsif category_name == 'coding' %}{% assign category_label = 'Coding' %}
+    {% elsif category_name == 'productivity' %}{% assign category_label = 'Productivity' %}
+    {% else %}{% assign category_label = category_name | capitalize %}
+    {% endif %}
+    <span class="breadcrumb-sep">/</span>
+    <a href="{{ site.baseurl }}/categories/{{ category }}.html">{{ category_label }}</a>
+  {% endif %}
+  <span class="breadcrumb-sep">/</span>
+  <span class="breadcrumb-current">{{ page.title }}</span>
+</nav>

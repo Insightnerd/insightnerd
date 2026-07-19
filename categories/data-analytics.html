@@ -1,0 +1,33 @@
+---
+layout: default
+title: "Data Analytics"
+description: "SQL, Python, data visualization, and data engineering guides."
+permalink: /categories/data-analytics.html
+---
+
+<div class="category-page">
+  {% include breadcrumbs.html %}
+
+  <section class="category-header">
+    <p class="eyebrow">Category</p>
+    <h1>Data Analytics</h1>
+    <p>SQL, Python, visualization tools, and data engineering — practical analytics for real work.</p>
+    {% assign category_posts = site.posts | where: "categories", "data-analytics" %}
+    <span class="category-count">{{ category_posts.size }} article{% if category_posts.size != 1 %}s{% endif %}</span>
+  </section>
+
+  <div class="category-posts">
+    {% if category_posts.size > 0 %}
+      {% for post in category_posts %}
+      <a href="{{ site.baseurl }}{{ post.url }}" class="post-card">
+        <span class="post-card-tag">Data</span>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+        <span class="post-card-meta">{{ post.reading_time }} • {{ post.author }}</span>
+      </a>
+      {% endfor %}
+    {% else %}
+    <p class="empty-state">Articles coming soon.</p>
+    {% endif %}
+  </div>
+</div>
