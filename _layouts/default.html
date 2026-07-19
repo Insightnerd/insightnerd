@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  {% include head.html %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "InsightNerd",
+    "url": "{{ site.url }}",
+    "description": "{{ site.description | strip_html }}"
+  }
+  </script>
+</head>
+<body>
+  {% include header.html %}
+
+  <main>
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+  <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+title: InsightNerd
+tagline: Learn AI. Build Projects. Grow Your Career.
+description: >
+  InsightNerd is a technology publication covering AI, coding, data analytics,
+  and software tools. Practical knowledge for modern tech professionals.
+url: "https://insightnerd.in"
+baseurl: ""
+author: InsightNerd Team
+lang: en
+
+# Build settings
+markdown: kramdown
+permalink: /posts/:title/
+
+# GH Pages compatible plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from build
+exclude:
+  - .gitignore
+  - README.md
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      permalink: /posts/:title/
+  - scope:
+      path: "pages"
+    values:
+      layout: page
+      permalink: /:name/

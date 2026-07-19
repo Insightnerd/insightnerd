@@ -1,0 +1,32 @@
+---
+layout: default
+title: "Tutorials & How-To Guides"
+description: "Step-by-step tutorials and how-to guides for technology projects."
+---
+
+<div class="category-page">
+  {% include breadcrumbs.html %}
+
+  <section class="category-header">
+    <p class="eyebrow">Category</p>
+    <h1>Tutorials & Guides</h1>
+    <p>Step-by-step tutorials and how-to guides — build real projects with clear instructions.</p>
+    {% assign category_posts = site.posts | where: "categories", "tutorials" %}
+    <span class="category-count">{{ category_posts.size }} article{% if category_posts.size != 1 %}s{% endif %}</span>
+  </section>
+
+  <div class="category-posts">
+    {% if category_posts.size > 0 %}
+      {% for post in category_posts %}
+      <a href="{{ site.baseurl }}{{ post.url }}" class="post-card">
+        <span class="post-card-tag">Tutorial</span>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+        <span class="post-card-meta">{{ post.reading_time }} • {{ post.author }}</span>
+      </a>
+      {% endfor %}
+    {% else %}
+    <p class="empty-state">Articles coming soon.</p>
+    {% endif %}
+  </div>
+</div>
