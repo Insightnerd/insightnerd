@@ -9,10 +9,32 @@ description: "AI news, coding tutorials, data analytics, and software tools. Pra
   <div class="home-hero-inner">
     <p class="eyebrow">Technology Publication</p>
     <h1>Learn AI. Build Projects.<br><span class="home-hero-highlight">Grow Your Career.</span></h1>
-    <p class="home-hero-sub">Practical guides on AI, coding, data analytics, and software tools — written by people who actually use them.</p>
+    <p class="home-hero-sub">Practical guides on AI, coding, data analytics, and career growth — written by people who actually use them.</p>
     <div class="home-hero-actions">
       <a href="#featured" class="btn btn-primary">Read latest</a>
       <a href="{{ site.baseurl }}/categories/ai.html" class="btn btn-ghost">Browse topics</a>
+    </div>
+  </div>
+</section>
+
+<!-- Trust strip: swap these four stats for real numbers once you have them (posts published, subscriber count, etc.) -->
+<section class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-stat">
+      <span class="trust-stat-num">{{ site.posts.size }}+</span>
+      <span class="trust-stat-label">In-depth guides</span>
+    </div>
+    <div class="trust-stat">
+      <span class="trust-stat-num">4</span>
+      <span class="trust-stat-label">Core topics covered</span>
+    </div>
+    <div class="trust-stat">
+      <span class="trust-stat-num">0</span>
+      <span class="trust-stat-label">Affiliate-padded listicles</span>
+    </div>
+    <div class="trust-stat">
+      <span class="trust-stat-num">2026</span>
+      <span class="trust-stat-label">Updated for this year</span>
     </div>
   </div>
 </section>
@@ -52,7 +74,7 @@ description: "AI news, coding tutorials, data analytics, and software tools. Pra
       </a>
       <a href="{{ site.baseurl }}/categories/coding.html" class="topic-card topic-coding">
         <span class="topic-icon">&lt;/&gt;</span>
-        <h3>Coding & Programming</h3>
+        <h3>Coding &amp; Programming</h3>
         <p>Languages, frameworks, and development workflows</p>
       </a>
       <a href="{{ site.baseurl }}/categories/data-analytics.html" class="topic-card topic-data">
@@ -62,9 +84,33 @@ description: "AI news, coding tutorials, data analytics, and software tools. Pra
       </a>
       <a href="{{ site.baseurl }}/categories/tutorials.html" class="topic-card topic-tutorials">
         <span class="topic-icon">📘</span>
-        <h3>Tutorials & Guides</h3>
+        <h3>Tutorials &amp; Guides</h3>
         <p>Step-by-step tutorials and how-to guides</p>
       </a>
+      <a href="{{ site.baseurl }}/categories/career.html" class="topic-card topic-career">
+        <span class="topic-icon">💼</span>
+        <h3>Career</h3>
+        <p>Resumes, interviews, and job-search strategy for tech and data roles</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Why InsightNerd: short trust-building section, Kanerika-style but scaled to a personal blog -->
+  <section class="why-section">
+    <h2 class="section-heading">Why InsightNerd</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>Written from real use</h3>
+        <p>Every guide comes from actually using the tool, running the code, or doing the job search — not summarizing someone else's summary.</p>
+      </div>
+      <div class="why-card">
+        <h3>No affiliate padding</h3>
+        <p>Recommendations are based on what earns its place, not what pays the highest commission.</p>
+      </div>
+      <div class="why-card">
+        <h3>Built for practitioners</h3>
+        <p>Guides assume you want to do the thing, not just read about it — code, steps, and templates you can use directly.</p>
+      </div>
     </div>
   </section>
 
@@ -73,12 +119,12 @@ description: "AI news, coding tutorials, data analytics, and software tools. Pra
     <h2 class="section-heading">Latest articles</h2>
     <div class="latest-grid">
       {% for post in site.posts limit:6 %}
-      <a href="{{ site.baseurl }}{{ post.url }}" class="post-card">
-        <span class="post-card-tag">{{ post.categories | first | default: "Article" }}</span>
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
-        <span class="post-card-meta">{{ post.reading_time }}</span>
-      </a>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="post-card">
+          <span class="post-card-tag">{{ post.categories | first | default: "Article" }}</span>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          <span class="post-card-meta">{{ post.reading_time }}</span>
+        </a>
       {% endfor %}
     </div>
   </section>

@@ -1,0 +1,32 @@
+---
+layout: default
+title: "Career — InsightNerd"
+description: "Resume, interview, and job-search guides for tech and data roles — practical career advice for AI, coding, and analytics professionals."
+permalink: /categories/career.html
+---
+
+<section class="category-hero">
+  <p class="eyebrow">Category</p>
+  <h1>Career</h1>
+  <p class="category-sub">Resumes, interviews, job-search strategy, and career growth for people working in AI, coding, and data.</p>
+</section>
+
+<section class="latest-section">
+  {% assign career_posts = site.posts | where_exp: "post", "post.categories contains 'career'" %}
+  {% if career_posts.size > 0 %}
+    <div class="latest-grid">
+      {% for post in career_posts %}
+        <a href="{{ site.baseurl }}{{ post.url }}" class="post-card">
+          <span class="post-card-tag">{{ post.categories | first | default: "Career" }}</span>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          <span class="post-card-meta">{{ post.reading_time }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>New career guides are on the way — check back soon.</p>
+  {% endif %}
+</section>
+
+{% include newsletter.html %}
